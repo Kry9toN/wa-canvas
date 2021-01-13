@@ -4,8 +4,8 @@ const { formatVariable, applyText } = require("../../utils/functions");
 module.exports = class Greeting {
 
     constructor() {
-        this.username = "Clyde";
-        this.guildName = "ServerName";
+        this.username = "KryPtoN";
+        this.guildName = "KryPtoN GrouP";
         this.colorTitleBorder = "#000000";
         this.backgroundImage = `${__dirname}/../../assets/img/1px.png`;
         this.avatar = `${__dirname}/../../assets/img/default-avatar.png`;
