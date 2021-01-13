@@ -7,9 +7,6 @@ module.exports = class Greeting {
         this.username = "Clyde";
         this.guildName = "ServerName";
         this.colorTitleBorder = "#000000";
-        this.colorMemberCount = "#ffffff";
-        this.textMemberCount = "- {count}th member !";
-        this.memberCount = "0";
         this.backgroundImage = `${__dirname}/../../assets/img/1px.png`;
         this.avatar = `${__dirname}/../../assets/img/default-avatar.png`;
         this.opacityBorder = "0.4";
@@ -17,12 +14,7 @@ module.exports = class Greeting {
         this.colorUsername = "#ffffff";
         this.colorUsernameBox = "#000000";
         this.opacityUsernameBox = "0.4";
-        this.discriminator = "XXXX";
-        this.colorDiscriminator = "#ffffff";
-        this.opacityDiscriminatorBox = "0.4";
-        this.colorDiscriminatorBox = "#000000";
         this.colorMessage = "#ffffff";
-        this.colorHashtag = "#ffffff";
         this.colorBackground = "000000";
     }
 
@@ -30,12 +22,7 @@ module.exports = class Greeting {
         this.avatar = value;
         return this;
     }
-    
-    setDiscriminator(value) {
-        this.discriminator = value;
-        return this;
-    }
-    
+
     setUsername(value) {
         this.username = value;
         return this;
@@ -45,12 +32,7 @@ module.exports = class Greeting {
         this.guildName = value;
         return this;
     }
-    
-    setMemberCount(value) {
-        this.memberCount = value;
-        return this;
-    }
-    
+
     setBackground(value) {
         this.backgroundImage = value;
         return this;
@@ -80,7 +62,6 @@ module.exports = class Greeting {
         const ctx = canvas.getContext("2d");
 
         const guildName = this.textMessage.replace(/{server}/g, this.guildName);
-        const memberCount = this.textMemberCount.replace(/{count}/g, this.memberCount);
 
         // Draw background
         ctx.fillStyle = this.colorBackground;
@@ -98,12 +79,9 @@ module.exports = class Greeting {
         ctx.fillStyle = this.colorUsernameBox;
         ctx.globalAlpha = this.opacityUsernameBox;
         ctx.fillRect(344, canvas.height - 296, 625, 65);
-        ctx.fillStyle = this.colorDiscriminatorBox;
-        ctx.globalAlpha = this.opacityDiscriminatorBox;
-        ctx.fillRect(389, canvas.height - 225, 138, 65);
         ctx.fillStyle = this.colorMessageBox;
         ctx.globalAlpha = this.opacityMessageBox;
-        ctx.fillRect(308, canvas.height - 110, 672, 65);
+        ctx.fillRect(308, canvas.height - 160, 672, 65);
 
         // Draw username
         ctx.globalAlpha = 1;
@@ -114,22 +92,7 @@ module.exports = class Greeting {
         // Draw guild name
         ctx.fillStyle = this.colorMessage;
         ctx.font = applyText(canvas, guildName, 53, 600, "Bold");
-        ctx.fillText(guildName, canvas.width - 690, canvas.height - 62);
-
-        // Draw discriminator
-        ctx.fillStyle = this.colorDiscriminator;
-        ctx.font = "40px Bold";
-        ctx.fillText(this.discriminator, canvas.width - 623, canvas.height - 178);
-
-        // Draw membercount
-        ctx.fillStyle = this.colorMemberCount;
-        ctx.font = "22px Bold";
-        ctx.fillText(memberCount, 40, canvas.height - 35);
-
-        // Draw # for discriminator
-        ctx.fillStyle = this.colorHashtag;
-        ctx.font = "75px SketchMatch";
-        ctx.fillText("#", canvas.width - 690, canvas.height - 165);
+        ctx.fillText(guildName, canvas.width - 690, canvas.height - 110);
 
         // Draw title
         ctx.font = "90px Bold";
