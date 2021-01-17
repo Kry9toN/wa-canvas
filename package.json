@@ -21,8 +21,6 @@
   "homepage": "https://github.com/xixi52/discord-canvas#readme",
   "dependencies": {
     "canvas": "^2.6.1",
-    "fortnite-9812": "^1.0.4",
-    "fortnite": "^4.3.2",
     "fs": "^0.0.1-security"
   }
 }
