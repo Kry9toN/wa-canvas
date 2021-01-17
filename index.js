@@ -11,6 +11,3 @@ Canvas.registerFont(`${__dirname}/assets/fonts/KeepCalm-Medium.ttf`, { family: "
 module.exports.Base = require('./src/greetings/Base');
 module.exports.Welcome = require('./src/greetings/Welcome');
 module.exports.Goodbye = require('./src/greetings/Goodbye');
-module.exports.FortniteShop = require('./src/fortnite/Shop');
-module.exports.FortniteStats = require('./src/fortnite/Stats');
-module.exports.RankCard = require('./src/rank/Rank');
